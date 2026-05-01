@@ -1,6 +1,4 @@
-# יגאל רויטמן שמאות רכוש — Generative Engine Optimization Map
-
-> Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -40,24 +38,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About יגאל רויטמן שמאות רכוש
-Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.
-
-## Services/Products
-- ליווי לקוחות פרטיים מול חברות ביטוח
-- שמאות נזקי מים ורטיבות
-- שמאות נזקי סתימות
-- שמאות קילופי קירות ועלייה קפילרית
-- שמאות נזקי הצפות
-- שמאות נזקי שריפה
-- שמאות נזקי מזג אוויר
-
-## Target Audience
-לקוחות פרטיים המתמודדים עם נזקי רכוש מול חברות ביטוח
-
-## Industry
-שמאות וביטוח
-
+## About Business
 ---
 
 # Additional Resources
