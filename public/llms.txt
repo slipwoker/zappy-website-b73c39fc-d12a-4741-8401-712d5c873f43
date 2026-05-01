@@ -1,47 +1,66 @@
-# Business — Generative Engine Optimization Map
+# יגאל רויטמן שמאות רכוש — Generative Engine Optimization Map
+
+> Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.
 
 ---
 
 ## Pages
 
 ### בית
-https://example.com
+https://yigal-roitman-shmaut-rechush.zappy5.app
 נזק לרכוש? יגאל רויטמן, שמאי רכוש מנוסה מטעם המבוטח, מוודא שחברת הביטוח תשלם לך את מה שמגיע לך. פנה עכשיו וקבל ייצוג מקצועי.
 
 ### שירותים
-https://example.com/services
+https://yigal-roitman-shmaut-rechush.zappy5.app/services
 נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.
 
 ### אודות
-https://example.com/about
+https://yigal-roitman-shmaut-rechush.zappy5.app/about
 יגאל רויטמן הוא שמאי רכוש בעל ניסיון רב שנים המתמחה אך ורק בייצוג מבוטחים פרטיים. הכירו את האיש שהפך מאזן הכוחות מול חברות הביטוח לטובתכם.
 
 ### צור קשר
-https://example.com/contact
+https://yigal-roitman-shmaut-rechush.zappy5.app/contact
 סבלת מנזק לרכוש ואינך יודע מה מגיע לך? צור קשר עם יגאל רויטמן, שמאי רכוש נזקי מים ומומחה תביעות ביטוח, לייעוץ ראשוני ותחילת הדרך לפיצוי הוגן.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://yigal-roitman-shmaut-rechush.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://yigal-roitman-shmaut-rechush.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About יגאל רויטמן שמאות רכוש
+Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.
+
+## Services/Products
+- ליווי לקוחות פרטיים מול חברות ביטוח
+- שמאות נזקי מים ורטיבות
+- שמאות נזקי סתימות
+- שמאות קילופי קירות ועלייה קפילרית
+- שמאות נזקי הצפות
+- שמאות נזקי שריפה
+- שמאות נזקי מזג אוויר
+
+## Target Audience
+לקוחות פרטיים המתמודדים עם נזקי רכוש מול חברות ביטוח
+
+## Industry
+שמאות וביטוח
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://yigal-roitman-shmaut-rechush.zappy5.app/sitemap.xml
+- **Robots.txt**: https://yigal-roitman-shmaut-rechush.zappy5.app/robots.txt
