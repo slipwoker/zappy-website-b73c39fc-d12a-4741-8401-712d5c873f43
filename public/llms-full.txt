@@ -2,13 +2,13 @@
 
 Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.
 
-Source: https://example.com
+Source: https://yigal-roitman-shmaut-rechush.zappy5.app
 
 ---
 
 ## שמאי רכוש — יגאל רויטמן שמאות רכוש
 
-URL: https://example.com
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app
 Description: נזק לרכוש? יגאל רויטמן, שמאי רכוש מנוסה מטעם המבוטח, מוודא שחברת הביטוח תשלם לך את מה שמגיע לך. פנה עכשיו וקבל ייצוג מקצועי.
 
 שמאי רכוש — יגאל רויטמן שמאות רכוש
@@ -540,7 +540,7 @@ Description: נזק לרכוש? יגאל רויטמן, שמאי רכוש מנו�
 
 ## כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש
 
-URL: https://example.com/services
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/services
 Description: נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.
 
 כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש
@@ -1190,7 +1190,7 @@ Description: נזקי מים, רטיבות, שריפה או סערה — יגא�
 
 ## מי עומד לצידך מול הביטוח — יגאל רויטמן שמאות רכוש
 
-URL: https://example.com/about
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/about
 Description: יגאל רויטמן הוא שמאי רכוש בעל ניסיון רב שנים המתמחה אך ורק בייצוג מבוטחים פרטיים. הכירו את האיש שהפך מאזן הכוחות מול חברות הביטוח לטובתכם.
 
 מי עומד לצידך מול הביטוח — יגאל רויטמן שמאות רכוש
@@ -1724,7 +1724,7 @@ Description: יגאל רויטמן הוא שמאי רכוש בעל ניסיון 
 
 ## הצעד הראשון לפיצוי מגיע לך — יגאל רויטמן שמאות רכוש
 
-URL: https://example.com/contact
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/contact
 Description: סבלת מנזק לרכוש ואינך יודע מה מגיע לך? צור קשר עם יגאל רויטמן, שמאי רכוש נזקי מים ומומחה תביעות ביטוח, לייעוץ ראשוני ותחילת הדרך לפיצוי הוגן.
 
 הצעד הראשון לפיצוי מגיע לך — יגאל רויטמן שמאות רכוש
@@ -2289,7 +2289,7 @@ Igalro1974@gmail.com
 
 ## מדיניות פרטיות
 
-URL: https://example.com/privacy
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/privacy
 Description: מדיניות הפרטיות שלנו - כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם
 
 מדיניות פרטיות
@@ -2547,7 +2547,7 @@ Description: מדיניות הפרטיות שלנו - כיצד אנו אוספי
 
 ## הצהרת נגישות
 
-URL: https://example.com/accessibility
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility
 Description: הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית
 
 הצהרת נגישות
@@ -2814,7 +2814,7 @@ Description: הצהרת הנגישות שלנו - מחויבותנו לנגיש�
 
 ## תנאי שימוש
 
-URL: https://example.com/terms
+URL: https://yigal-roitman-shmaut-rechush.zappy5.app/terms
 Description: תנאי השימוש באתר - הזכויות והחובות של המשתמשים
 
 תנאי שימוש

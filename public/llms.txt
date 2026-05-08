@@ -7,33 +7,33 @@
 ## Pages
 
 ### בית
-https://example.com
+https://yigal-roitman-shmaut-rechush.zappy5.app
 נזק לרכוש? יגאל רויטמן, שמאי רכוש מנוסה מטעם המבוטח, מוודא שחברת הביטוח תשלם לך את מה שמגיע לך. פנה עכשיו וקבל ייצוג מקצועי.
 
 ### שירותים
-https://example.com/services
+https://yigal-roitman-shmaut-rechush.zappy5.app/services
 נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.
 
 ### אודות
-https://example.com/about
+https://yigal-roitman-shmaut-rechush.zappy5.app/about
 יגאל רויטמן הוא שמאי רכוש בעל ניסיון רב שנים המתמחה אך ורק בייצוג מבוטחים פרטיים. הכירו את האיש שהפך מאזן הכוחות מול חברות הביטוח לטובתכם.
 
 ### צור קשר
-https://example.com/contact
+https://yigal-roitman-shmaut-rechush.zappy5.app/contact
 סבלת מנזק לרכוש ואינך יודע מה מגיע לך? צור קשר עם יגאל רויטמן, שמאי רכוש נזקי מים ומומחה תביעות ביטוח, לייעוץ ראשוני ותחילת הדרך לפיצוי הוגן.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://yigal-roitman-shmaut-rechush.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://yigal-roitman-shmaut-rechush.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -46,8 +46,8 @@ Information about WCAG compliance and accessibility features.
 - Address: דרור 54, ראשון לציון, ישראל, 7529637, Israel
 
 ### Contact form
-- URL: https://example.com/contact
-- Endpoint: https://example.com/api/email/contact-form
+- URL: https://yigal-roitman-shmaut-rechush.zappy5.app/contact
+- Endpoint: https://yigal-roitman-shmaut-rechush.zappy5.app/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -83,6 +83,6 @@ Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in rep
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://example.com/sitemap.xml
-- Robots: https://example.com/robots.txt
-- Flattened page text (for LLMs): https://example.com/llms-full.txt
+- Sitemap (XML): https://yigal-roitman-shmaut-rechush.zappy5.app/sitemap.xml
+- Robots: https://yigal-roitman-shmaut-rechush.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://yigal-roitman-shmaut-rechush.zappy5.app/llms-full.txt
