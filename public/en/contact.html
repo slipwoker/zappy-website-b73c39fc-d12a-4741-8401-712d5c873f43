@@ -1,243 +1,20 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <title>כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש</title>
-    <meta name="description" content="נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.">
-    <meta name="keywords" content="שמאי רכוש נזקי מים, נזקי רטיבות ועובש, שמאות נזקי שריפה, נזקי סערה ומזג אוויר, תביעת ביטוח נזקי מים עורך שמאי">
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <!-- Zappy Analytics -->
-<script>
-(function() {
-  'use strict';
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The first step to compensation you deserve — Yigal Roitman Property Appraisal</title>
+  <meta name="description" content="Suffered property damage and don't know what you're entitled to? Contact Yigal Roitman, water damage property appraiser and insurance claims expert, for initial consultation and starting your path to fair compensation.">
+  <meta name="keywords" content="property appraiser, professional appraiser contact, insurance claim consultation, property appraiser water damage">
+  <meta name="robots" content="index, follow">
   
-  // Configuration
-  var config = {
-    websiteId: 'b73c39fc-d12a-4741-8401-712d5c873f43',
-    apiUrl: 'https://api.zappy5.com/api/analytics/track',
-    sessionDuration: 30 * 60 * 1000, // 30 minutes
-    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
-    trackPageViews: true,
-    trackClicks: true,
-    trackFormSubmissions: true
-  };
-  
-  // Generate or retrieve persistent visitor ID (30 days)
-  function getVisitorId() {
-    var visitorKey = 'zappy_visitor_' + config.websiteId;
-    var visitor = null;
-    
-    try {
-      visitor = localStorage.getItem(visitorKey);
-      if (visitor) {
-        var visitorData = JSON.parse(visitor);
-        var now = Date.now();
-        
-        // Check if visitor ID is still valid (30 days)
-        if (now - visitorData.created < config.visitorDuration) {
-          // Update last seen timestamp
-          visitorData.lastSeen = now;
-          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
-          return visitorData.id;
-        }
-      }
-    } catch (e) {
-      console.warn('Zappy Analytics: LocalStorage not available');
-    }
-    
-    // Generate new visitor ID
-    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-    
-    try {
-      localStorage.setItem(visitorKey, JSON.stringify({
-        id: newVisitorId,
-        created: Date.now(),
-        lastSeen: Date.now()
-      }));
-    } catch (e) {
-      // Continue without local storage
-    }
-    
-    return newVisitorId;
-  }
-  
-  // Generate or retrieve session ID (30 minutes)
-  function getSessionId() {
-    var sessionKey = 'zappy_session_' + config.websiteId;
-    var session = null;
-    
-    try {
-      session = sessionStorage.getItem(sessionKey);
-      if (session) {
-        var sessionData = JSON.parse(session);
-        var now = Date.now();
-        
-        // Check if session is still valid
-        if (now - sessionData.timestamp < config.sessionDuration) {
-          // Update timestamp
-          sessionData.timestamp = now;
-          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
-          return sessionData.id;
-        }
-      }
-    } catch (e) {
-      console.warn('Zappy Analytics: SessionStorage not available');
-    }
-    
-    // Generate new session ID
-    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-    
-    try {
-      sessionStorage.setItem(sessionKey, JSON.stringify({
-        id: newSessionId,
-        timestamp: Date.now()
-      }));
-    } catch (e) {
-      // Continue without session storage
-    }
-    
-    return newSessionId;
-  }
-  
-  var visitorId = getVisitorId();
-  var sessionId = getSessionId();
-  
-  // Track an event
-  function trackEvent(eventType, data) {
-    data = data || {};
-    
-    var eventData = {
-      website_id: config.websiteId,
-      event_type: eventType,
-      page_path: window.location.pathname,
-      referrer: document.referrer || 'direct',
-      visitor_id: visitorId,
-      session_id: sessionId,
-      metadata: data
-    };
-    
-    // Use sendBeacon if available (better for page unload events)
-    if (navigator.sendBeacon) {
-      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
-      navigator.sendBeacon(config.apiUrl, blob);
-    } else {
-      // Fallback to fetch
-      fetch(config.apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(eventData),
-        keepalive: true
-      }).catch(function(error) {
-        console.warn('Zappy Analytics: Failed to track event', error);
-      });
-    }
-  }
-  
-  // Track page view
-  if (config.trackPageViews) {
-    trackEvent('pageview', {
-      title: document.title,
-      url: window.location.href
-    });
-  }
-  
-  // Track clicks on important elements
-  if (config.trackClicks) {
-    document.addEventListener('click', function(e) {
-      var target = e.target;
-      
-      // Track button clicks (counted as actions)
-      if (target.tagName === 'BUTTON' || target.closest('button')) {
-        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
-        trackEvent('click', {
-          element: 'button',
-          text: button.textContent.trim().substring(0, 100),
-          id: button.id || null,
-          class: button.className || null
-        });
-      }
-      
-      // Track link clicks (navigation - not counted as actions)
-      else if (target.tagName === 'A' || target.closest('a')) {
-        var link = target.tagName === 'A' ? target : target.closest('a');
-        trackEvent('navigation', {
-          element: 'link',
-          text: link.textContent.trim().substring(0, 100),
-          href: link.href,
-          external: link.hostname !== window.location.hostname
-        });
-      }
-    }, true);
-  }
-  
-  // Track form submissions
-  if (config.trackFormSubmissions) {
-    document.addEventListener('submit', function(e) {
-      var form = e.target;
-      
-      trackEvent('form_submit', {
-        form_id: form.id || null,
-        form_name: form.name || null,
-        form_action: form.action || null,
-        form_method: form.method || 'GET'
-      });
-    }, true);
-  }
-  
-  // Track time on page (send on page unload)
-  var pageLoadTime = Date.now();
-  
-  window.addEventListener('beforeunload', function() {
-    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
-    
-    trackEvent('page_unload', {
-      time_on_page: timeOnPage,
-      page_path: window.location.pathname
-    });
-  });
-  
-  // Expose tracking function globally for custom events
-  window.zappyAnalytics = {
-    track: trackEvent,
-    getVisitorId: function() { return visitorId; },
-    getSessionId: function() { return sessionId; }
-  };
-  
-})();
-</script>
-<!-- End Zappy Analytics -->
-    <meta property="og:title" content="כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש">
-    <meta property="og:description" content="נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש">
-    <meta name="twitter:description" content="נזקי מים, רטיבות, שריפה או סערה — יגאל רויטמן מספק שמאות רכוש מקצועית לכל סוג נזק ומייצג אותך מול חברת הביטוח עד לקבלת הפיצוי המלא.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://yigal-roitman-shmaut-rechush.zappy5.app#organization","name":"יגאל רויטמן שמאות רכוש","url":"https://yigal-roitman-shmaut-rechush.zappy5.app","description":"Yigal Roitman is a property appraiser (שמאי רכוש) who specializes in representing private clients against insurance companies in property damage claims. His expertise covers a wide range of damage types including water damage, moisture and dampness, pipe blockages, wall peeling, capillary rise, flooding, fire damage, and weather-related damage. His core value proposition is acting as a professional advocate who ensures clients receive fair compensation from insurance companies — positioning him as a trusted expert on the client's side.","address":{"@type":"PostalAddress","streetAddress":"דרור 54, ראשון לציון, ישראל, 7529637, Israel"},"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","email":"Igalro1974@gmail.com","telephone":"055-9139983","availableLanguage":["he","ru","en"]}]},{"@type":"WebSite","@id":"https://yigal-roitman-shmaut-rechush.zappy5.app#website","url":"https://yigal-roitman-shmaut-rechush.zappy5.app","name":"יגאל רויטמן שמאות רכוש","publisher":{"@id":"https://yigal-roitman-shmaut-rechush.zappy5.app#organization"},"inLanguage":"he"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yigal-roitman-shmaut-rechush.zappy5.app"},{"@type":"ListItem","position":2,"name":"Services","item":"https://yigal-roitman-shmaut-rechush.zappy5.app/services"}]}]}</script>
-    <title data-i18n="services_page_title">כל נזק יש לו פתרון — יגאל רויטמן שמאות רכוש</title>
-  
-  
-  
-  
-  
-  
+  <meta property="og:title" content="The first step to compensation you deserve — Igal Roitman Property Appraisal">
+  <meta property="og:description" content="Suffered property damage and don't know what you're entitled to? Contact Yigal Roitman, water damage property appraiser and insurance claims expert, for initial consultation and starting your path to fair compensation.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
   
-  
-  
-  
-  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The first step to compensation you deserve — Yigal Roitman Property Appraisal">
+  <meta name="twitter:description" content="Suffered property damage and don't know what you're entitled to? Contact Yigal Roitman, water damage property appraiser and insurance claims expert, for initial consultation and starting your path to fair compensation.">
+  <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicons -->
@@ -288,9 +65,7 @@ html[dir="ltr"] .terms-content li,
 html[dir="ltr"] .privacy-content li {
   direction: ltr !important;
   text-align: left !important;
-}
-
-/* ZAPPY-LTR-TEXTALIGN-OVERRIDES:BEGIN */
+}html[dir="rtl"] /* ZAPPY-LTR-TEXTALIGN-OVERRIDES:BEGIN */
 /* ============================================
    LTR TEXT-ALIGN OVERRIDES FOR RTL-BAKED CONTENT
    See block comment at top of multiLanguageService.js for full rationale.
@@ -302,7 +77,7 @@ html[dir="ltr"] .privacy-content li {
    - .order-success-card           → checkout success card
    - .privacy-consent-label        → contact-form consent checkbox row
    - .text-left                    → AI sometimes literally writes
-                                     ".text-left { text-align: right }" in
+                                     ".text-left{text-align: right ;}" in
                                      Hebrew sites — flip it so the class
                                      name matches its behaviour.
    Uses text-align: start (resolves to left in LTR, right in RTL via the
@@ -991,97 +766,147 @@ html[dir="rtl"] body {
 }
 
 </style>
-    <link rel="stylesheet" href="/styles.css">
+<!-- hreflang tags for SEO -->
+<link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact">
+<link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/contact">
+<link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/contact">
+<link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact">
+<!-- Zappy V2 LTR Layout Fix (CSS) -->
+<style>
+/* Fix V2 navbar layout for LTR pages - CSS applied immediately to prevent FOUC */
+/* CRITICAL: direction property affects how flex order is interpreted */
+/* Direction applies to all screens, but flex-direction: row is DESKTOP ONLY */
+/* IMPORTANT: We deliberately scope the bare element selectors to .navbar
+   (so the selector reads "header.navbar" / "nav.navbar"). Earlier the bare
+   header and nav selectors here were catching every <nav> on the page,
+   including <nav class="product-breadcrumb"> on the product detail /
+   category pages and <nav class="zappy-catalog-menu"> in the storefront
+   chrome. Both then inherited justify-content: space-between !important and
+   exploded into full-width-spread layouts only on the English (LTR) URLs
+   (Hebrew was fine because the site has no html[dir="ltr"]). The .navbar /
+   .nav-container selectors below already cover the actual main navbar
+   regardless of which tag carries the class, so the bare-element fallback
+   was both unnecessary and actively harmful. Generic across every site /
+   language combination. */
+html[dir="ltr"] header.navbar,
+html[dir="ltr"] nav.navbar,
+html[dir="ltr"] .navbar,
+html[dir="ltr"] .nav-container {
+  direction: ltr !important;
+  justify-content: space-between !important;
+}
 
-    <style id="zappy-dropdown-submenu-styles">
-      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
-      /* Base styles for dropdown submenus - parent must be positioned */
-      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
-      /* Submenu base - hidden by default */
-      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
-      /* CRITICAL: Desktop hover styles to show dropdown */
-      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Submenu item styling */
-      .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
-      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
-      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-      .sub-menu a:hover { background-color: #f5f5f5; }
-      /* RTL (Hebrew/Arabic) dropdown positioning */
-      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-      /* Desktop: show submenu on Menu Group hover */
-      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Menu Group title styling */
-      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
-      
-      /* ========== MOBILE SUBMENU STYLES ========== */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
-        /* Disable hover behavior on mobile */
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
-        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
-        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
-        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
-        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
-        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
-        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
-        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
-      }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
-    </style>
+/* nav-right-group should appear FIRST (left side) in LTR */
+html[dir="ltr"] .nav-right-group {
+  direction: ltr !important;
+  order: -1 !important;
+  margin-left: 0 !important;
+}
 
-    <style id="zappy-widget-visibility">
-      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
-      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
-      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
-      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
-      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
-      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
-      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
-      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
-      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
-      html[dir="ltr"] ._access-icon,
-      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
-      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
-      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
-      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
-      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
-      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
-      @media (max-width: 768px) {
-        #mic-access-tool-general-button, .mic-access-tool-general-button,
-        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
-        }
-      }
-      @media (min-width: 769px) {
-        #mic-access-tool-general-button, .mic-access-tool-general-button,
-        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
-        }
-      }
-    </style>
-</head>
+/* nav-cta-container should appear LAST (right side) in LTR */
+html[dir="ltr"] .nav-cta-container {
+  direction: ltr !important;
+  order: 1 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* nav-menu: ensure LTR direction */
+html[dir="ltr"] .nav-menu,
+html[dir="ltr"] #navMenu {
+  direction: ltr !important;
+  margin-left: 0 !important;
+}
+
+/* nav-brand: should be first child within nav-right-group */
+html[dir="ltr"] .nav-brand {
+  direction: ltr !important;
+  order: -1 !important;
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+}
+
+/* DESKTOP ONLY: Horizontal flex layout - prevents breaking mobile vertical menu */
+/* Same scoping rationale as above: bare element selectors would force
+   flex-direction: row on every <header>/<nav> in the page (article headers,
+   breadcrumbs, catalog menus, footer navigation). Restrict to .navbar. */
+@media (min-width: 769px) {
+  html[dir="ltr"] header.navbar,
+  html[dir="ltr"] nav.navbar,
+  html[dir="ltr"] .navbar,
+  html[dir="ltr"] .nav-container {
+    flex-direction: row !important;
+  }
+  
+  html[dir="ltr"] .nav-right-group,
+  html[dir="ltr"] .nav-cta-container {
+    flex-direction: row !important;
+  }
+  
+  html[dir="ltr"] .nav-menu,
+  html[dir="ltr"] #navMenu {
+    flex-direction: row !important;
+  }
+
+  /* V2 ecommerce sites set justify-content: space-between on nav-right-group,
+     pushing the menu away from the logo in LTR. Override to flex-start. */
+  html[dir="ltr"] .nav-right-group {
+    justify-content: flex-start !important;
+  }
+  html[dir="ltr"] .nav-right-group .nav-ecommerce-icons {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  /* E-commerce flat nav layout (no nav-right-group wrapper):
+     brand → menu → icons. Mirrors the runtime CSS from
+     ensureRuntimeCssInjected so layout is correct even before JS loads. */
+  html[dir="ltr"] .nav-container > .nav-brand {
+    order: -1 !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-menu,
+  html[dir="ltr"] .nav-container > #navMenu {
+    order: 1 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 24px !important;
+    flex: 0 1 auto !important;
+  }
+  html[dir="ltr"] .nav-container > .lang-switcher,
+  html[dir="ltr"] .nav-container > .nav-ecommerce-icons {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left {
+    margin-inline-start: auto !important;
+  }
+}
+
+/* Search box button position fix for LTR pages */
+html[dir="ltr"] .nav-search-box {
+  direction: ltr !important;
+}
+html[dir="ltr"] .nav-search-btn {
+  left: auto !important;
+  right: 4px !important;
+}
+html[dir="ltr"] .nav-search-input {
+  padding-left: 14px !important;
+  padding-right: 40px !important;
+}
+html[dir="ltr"] .nav-search-results {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* lang-switcher positioning */
+html[dir="ltr"] .lang-switcher {
+  direction: ltr !important;
+  margin-left: 0 !important;
+}
+</style></head>
 <body>
-
   <nav class="navbar">
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-i18n-aria-label="services_aria_label_120">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-i18n-aria-label="contact_aria_label_125">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
@@ -1090,7 +915,7 @@ html[dir="rtl"] body {
     </svg>
   </button>
 
-  <button class="phone-header-btn" data-phone="0559139983" aria-label="Call" data-i18n-aria-label="services_aria_label_121">
+  <button class="phone-header-btn" data-phone="0559139983" aria-label="Call" data-i18n-aria-label="contact_aria_label_126">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
@@ -1098,23 +923,38 @@ html[dir="rtl"] body {
 
   <div class="nav-container">
     <div class="nav-right-group"><div class="nav-brand">
-      <a href="/" class="logo-link">
-        <img src="/assets/business-logo.webp" alt="יגאל רויטמן שמאות רכוש" class="logo" data-i18n-alt="services_alt_112">
+      <a href="/en" class="logo-link">
+        <img src="/assets/business-logo.webp" alt="Igal Roitman Property Appraisal" class="logo">
       </a>
-    </div><ul class="nav-menu" id="navMenu"><li><a href="/services" data-i18n="services_nav_109">שירותים</a></li><li><a href="/about" data-i18n="services_nav_110">אודות</a></li></ul></div>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/en/services">Services</a></li><li><a href="/en/about">About</a></li></ul></div>
 
     
 
     
-<div class="lang-switcher" data-no-icon-edit="true" data-icon-color="#FAFAF8" style="position:relative;display:inline-flex;align-items:center;z-index:1000;margin:0 4px;">
-  <button class="lang-switcher-current" aria-haspopup="true" aria-expanded="false" data-no-icon-edit="true" style="display:flex;align-items:center;padding:8px;background:transparent;border:none;border-radius:6px;cursor:pointer;color:inherit;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;" data-no-icon-edit="true"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421-6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"></path></svg>
-  </button>
-  <div class="lang-switcher-dropdown" role="menu" style="position:absolute;top:100%;right:0;margin-top:4px;min-width:140px;background:white;border:1px solid rgba(128,128,128,0.2);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.2s ease;z-index:1001;"><button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
-        <button class="lang-option" data-lang="en">🇺🇸 English</button></div>
-</div>
-<script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script><div class="nav-cta-container">
-      <a href="/contact" class="nav-cta-btn" data-i18n="services_nav_111">צור קשר</a>
+
+      
+      <style>
+        .lang-switcher:hover .lang-switcher-dropdown,
+        .lang-switcher:focus-within .lang-switcher-dropdown {
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: translateY(0) !important;
+        }
+        .lang-option:hover {
+          background: #f5f5f5;
+        }
+      </style>
+      <script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script>
+    
+<script data-no-icon-edit="true">(function(){function f(){var b=document.querySelector('.lang-switcher-current');if(!b)return;var n=b.closest('nav')||b.closest('header')||b.closest('.navbar');if(!n)return;var a=n.querySelector('.nav-menu a,.nav-links a');if(!a)a=n.querySelector('a:not(.lang-option):not(.lang-switcher-current):not([class*="logo"])');if(a){var c=getComputedStyle(a).color;if(c&&c!=='rgb(0, 0, 0)'&&c!=='rgba(0, 0, 0, 0)'){b.style.color=c;return;}}var s=getComputedStyle(n).backgroundColor;if(s&&s!=='rgba(0, 0, 0, 0)'&&s!=='transparent'){var m=s.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m){var l=(0.299*parseInt(m[1])+0.587*parseInt(m[2])+0.114*parseInt(m[3]))/255;b.style.color=l>0.5?'#1a1a1a':'#F3FAFF';}}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{setTimeout(f,0);}})()</script><div class="nav-cta-container" style="align-items: center;"><div class="lang-switcher" data-icon-color="#FAFAF8" style="position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:8px;">
+        <button class="lang-switcher-current" type="button" style="display:flex;align-items:center;justify-content:center;gap:6px;background:transparent;border:none;cursor:pointer;padding:8px;border-radius:8px;color:inherit;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421,6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"></path></svg>
+        </button>
+        <div class="lang-switcher-dropdown" style="position:absolute;top:100%;right:0;background:white;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);min-width:150px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.2s ease;z-index:1000;">
+          <a href="/contact" class="lang-option" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;text-decoration:none;color:#333;font-size:14px;"><img src="https://api.iconify.design/circle-flags/il.svg" width="20" height="20" alt="" style="display:inline-block;vertical-align:middle;border-radius:50%;"> עברית</a><a href="/ru/contact" class="lang-option" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;text-decoration:none;color:#333;font-size:14px;"><img src="https://api.iconify.design/circle-flags/ru.svg" width="20" height="20" alt="" style="display:inline-block;vertical-align:middle;border-radius:50%;"> Русский</a>
+        </div>
+      </div>
+      <a href="/en/contact" class="nav-cta-btn">Contact</a>
     </div>
   </div>
 </nav>
@@ -1548,363 +1388,28 @@ html[dir="rtl"] body {
 </script>
   
   <main>
-    <section class="services-intro-section" data-layout-spec="שירותים-intro" dir="rtl">
-  <div class="services-intro-container">
-    <div class="services-intro-grid">
+    <section class="contact-intro-section" data-layout-spec="צור קשר-intro" dir="rtl">
+  <div class="contact-intro-container">
 
-      <!-- START column: content -->
-      <div class="services-intro-content">
-        <p class="services-intro-eyebrow" data-i18n="services_p_33">שמאי רכוש מטעם המבוטח</p>
-        <h1 class="services-intro-h1" data-i18n="services_h1_1">ייצוג מקצועי בתביעות נזקי רכוש מול חברות הביטוח</h1>
-        <p class="services-intro-lead" data-i18n="services_p_34">כשמתרחש נזק לדירה או לרכוש — מים, רטיבות, שריפה או מזג אוויר — חברת הביטוח מגיעה עם שמאי מטעמה. יגאל רויטמן, שמאי רכוש בעל ניסיון רב, פועל אך ורק לטובתך: מתעד את הנזק כנדרש, מגיש חוות דעת מקצועית ומוודא שתקבל פיצוי הוגן ומלא.</p>
-
-        <!-- Summary card -->
-        <div class="services-summary-card">
-          <h3 class="services-summary-title" data-i18n="services_h3_6">תחומי הטיפול המרכזיים</h3>
-          <ul class="services-summary-list">
-            <li class="services-summary-item" data-i18n="services_li_89">
-              <span class="services-summary-icon">
-                <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
-              </span>
-              <div class="services-summary-item-content" data-i18n="services_div_98">
-                <strong>בדיקה ואבחון הנזק</strong>
-                <span>סיור מקצועי בנכס לאיתור ותיעוד מלא של כל הנזקים</span>
-              </div>
-            </li>
-            <li class="services-summary-item" data-i18n="services_li_90">
-              <span class="services-summary-icon">
-                <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              </span>
-              <div class="services-summary-item-content" data-i18n="services_div_99">
-                <strong>שמאות וחוות דעת מקצועית</strong>
-                <span>הערכת שווי הנזק וכתיבת חוות דעת שמאית מפורטת ומנומקת</span>
-              </div>
-            </li>
-            <li class="services-summary-item" data-i18n="services_li_91">
-              <span class="services-summary-icon">
-                <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              </span>
-              <div class="services-summary-item-content" data-i18n="services_div_100">
-                <strong>תיעוד ואיסוף ראיות</strong>
-                <span>צילום, מדידה ותיעוד שיטתי לחיזוק התביעה מול המבטח</span>
-              </div>
-            </li>
-            <li class="services-summary-item" data-i18n="services_li_92">
-              <span class="services-summary-icon">
-                <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </span>
-              <div class="services-summary-item-content" data-i18n="services_div_101">
-                <strong>ייצוג מול חברת הביטוח</strong>
-                <span>ניהול המשא ומתן מול השמאי מטעם המבטח להשגת הפיצוי המרבי</span>
-              </div>
-            </li>
-          </ul>
-        </div>
+    <!-- RIGHT COLUMN: Text Content -->
+    <div class="contact-intro-text-col">
+      <span class="contact-intro-eyebrow">Property Appraiser on Behalf of the Insured</span>
+      <h1 class="contact-intro-h1">Talk to us about your property damage</h1>
+      <p class="contact-intro-lead">If you've suffered water damage, moisture, fire, flooding or any other damage to your apartment — an initial conversation with us can save you costly mistakes with the insurance company. Igal Roitman, senior property appraiser, will explain exactly where you stand and what the right steps are moving forward.</p>
+      <p class="contact-intro-body">We work exclusively on your behalf — not on behalf of the insurance company. Our goal is to ensure you receive fair and full compensation for the damage caused to you.</p>
+      <div class="contact-intro-cta-row">
+        <a href="tel:055-9139983" class="btn-primary contact-intro-btn">Call Now</a>
+        <a href="mailto:Igalro1974@gmail.com" class="btn-secondary contact-intro-btn-sec">Send Message</a>
       </div>
-
-      <!-- END column: image -->
-      <div class="services-intro-image-col">
-        <div class="services-intro-image-frame">
-          <img data-placeholder="services-intro-image-1" data-context="A realistic residential interior showing visible property damage — water stains spreading across a white wall, peeling paint and damp patches near the baseboard, natural daylight coming through a window. The scene feels authentic and domestic, not staged. Photographic quality, warm tones, clean composition emphasizing the damage clearly." width="600" height="400" src="/assets/site-services-intro-image-1.webp" alt="נזק מים ורטיבות בדירה פרטית — קילוף טיח ולחות בקיר" data-i18n-alt="services_alt_113">
-          <div class="services-intro-image-caption" data-i18n="services_div_102">
-            <span>תיעוד נזק מים בדירה פרטית</span>
-          </div>
-        </div>
-        <div class="services-intro-image-badge" data-i18n="services_div_103">
-          <span class="badge-number">+15</span>
-          <span class="badge-label">שנות ניסיון<br>בשמאות רכוש</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Bottom divider -->
-  <div class="services-intro-divider-wrapper" aria-hidden="true">
-    <div class="services-intro-ruled-line">
-      <span class="ruled-break"></span>
-      <span class="ruled-break"></span>
-      <span class="ruled-break"></span>
-    </div>
-  </div>
-</section>
-
-<section class="services-damage-grid-section" data-layout-spec="שירותים-damage-grid" dir="rtl">
-  <div class="sdg-container">
-
-    <!-- Section Header -->
-    <div class="sdg-header">
-      <span class="sdg-eyebrow" data-i18n="services_span_72">תחומי הנזק שאנו מטפלים בהם</span>
-      <h2 class="sdg-title" data-i18n="services_h2_2">שמאי רכוש מקצועי לכל סוגי נזקי הדירה</h2>
-      <p class="sdg-subtitle" data-i18n="services_p_35">כל נזק רכוש מחייב תיעוד מדויק והערכה מקצועית. ללא שמאי מטעמכם, חברת הביטוח תקבע את הנזק לבדה — ולרוב לא לטובתכם. אנו מייצגים אתכם כדי להבטיח פיצוי מלא וצודק.</p>
     </div>
 
-    <!-- Main Grid -->
-    <div class="sdg-grid">
-
-      <!-- Card 1: Water Damage -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M14 3C14 3 5 12.5 5 17.5C5 22.2 9.03 26 14 26C18.97 26 23 22.2 23 17.5C23 12.5 14 3 14 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
-            <path d="M9 19C9.5 21.5 11.5 23 14 23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_7">נזקי מים</h3>
-          <p class="sdg-card-text" data-i18n="services_p_36">נזקי מים הם מהשכיחים ביותר, אך גם הקשים ביותר לתיעוד. ללא הערכת שמאי רכוש מוסמך, נזקים סמויים בקירות ובתשתיות נשארים מחוץ לפיצוי. אנו מוודאים שכל נזק — גלוי וסמוי — נכלל בתביעה.</p>
-        </div>
-      </article>
-
-      <!-- Card 2: Moisture & Dampness -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.8"></rect>
-            <path d="M8 14C8 14 10 11 14 14C18 17 20 14 20 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M8 18C8 18 10 15.5 14 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_8">רטיבות ועובש</h3>
-          <p class="sdg-card-text" data-i18n="services_p_37">רטיבות כרונית ועובש פוגעים במבנה הדירה ובבריאות הדיירים. חברות ביטוח נוטות לצמצם את היקף הנזק המוכר. שמאי מטעמכם יבדוק לעומק ויתעד את מלוא ההשלכות לצורך תביעה מקיפה.</p>
-        </div>
-      </article>
-
-      <!-- Image Tile 1 -->
-      <div class="sdg-image-tile sdg-image-tile--1">
-        <div class="sdg-image-label" data-i18n="services_div_104">תיעוד מקצועי</div>
-        <img data-placeholder="services-damage-grid-image-1" data-context="Professional property appraiser inspecting water damage on a wall in an Israeli apartment, using a moisture meter, clipboard with documentation forms visible, natural lighting, clean and professional atmosphere" width="600" height="400" src="/assets/site-services-damage-grid-image-1.webp" alt="שמאי רכוש בודק נזקי מים בדירה" data-i18n-alt="services_alt_114">
-      </div>
-
-      <!-- Card 3: Pipe Blockages -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 10H24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M4 18H24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M10 10V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M18 10V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="14" cy="14" r="2.5" stroke="currentColor" stroke-width="1.8"></circle>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_9">סתימות וצנרת</h3>
-          <p class="sdg-card-text" data-i18n="services_p_38">סתימות בצנרת גורמות לנזקים מקיפים שחורגים מעבר לנקודת התקלה. ללא הערכה מקצועית, הנזק הנלווה לרצפות, קירות ותשתיות נשאר ללא כיסוי. אנו מוודאים שמלוא ההיקף מתועד ומוגש לביטוח.</p>
-        </div>
-      </article>
-
-      <!-- Card 4: Wall Peeling -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.8"></rect>
-            <path d="M4 16L10 10L16 16L22 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M14 20H22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_10">קילופי קירות וטיח</h3>
-          <p class="sdg-card-text" data-i18n="services_p_39">קילוף טיח וצבע עשוי להעיד על נזק מבני עמוק יותר. כאשר מוגשת תביעה רק על הנזק הנראה לעין, הפיצוי חלקי בלבד. שמאי רכוש מנוסה יאתר ויתעד את מקור הבעיה לקבלת פיצוי מלא.</p>
-        </div>
-      </article>
-
-      <!-- Card 5: Capillary Rise -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M14 24V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M10 12L14 8L18 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M6 24H22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M8 20C8 20 10 17 14 20C18 23 20 20 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_11">עלייה קפילרית</h3>
-          <p class="sdg-card-text" data-i18n="services_p_40">עלייה קפילרית היא תופעה מורכבת שמקורה בקרקע ומתפשטת לאורך שנים. תיעוד לא מקצועי מאפשר לחברת הביטוח לדחות או לצמצם את התביעה. שמאי מטעמכם יספק חוות דעת מבוססת שתעמוד בפני ערעור.</p>
-        </div>
-      </article>
-
-      <!-- Image Tile 2 -->
-      <div class="sdg-image-tile sdg-image-tile--2">
-        <div class="sdg-image-label" data-i18n="services_div_105">הצפה ונזקי שטח</div>
-        <img data-placeholder="services-damage-grid-image-2" data-context="Flooded apartment interior in Israel showing water damage on floors and walls, evidence documentation context, professional assessment scenario, natural indoor lighting" width="600" height="400" src="/assets/site-services-damage-grid-image-2.webp" alt="נזקי הצפה בדירה" data-i18n-alt="services_alt_115">
-      </div>
-
-      <!-- Card 6: Flooding -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 18C3 18 5.5 15 8.5 18C11.5 21 14 18 14 18C14 18 16.5 15 19.5 18C22.5 21 25 18 25 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M3 22C3 22 5.5 19.5 8.5 22C11.5 24.5 14 22 14 22C14 22 16.5 19.5 19.5 22C22.5 24.5 25 22 25 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M8 14V5L14 3L20 5V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_12">הצפות</h3>
-          <p class="sdg-card-text" data-i18n="services_p_41">הצפה יוצרת נזק מיידי ונזק נסתר שמתגלה לאחר שבועות. ללא שמאי נזקי מים מטעמכם, הנזק הנסתר לא ייכלל בתביעה ותישאו בעלות שיקום מלאה. אנו מבטיחים תיעוד מקיף מהרגע הראשון.</p>
-        </div>
-      </article>
-
-      <!-- Card 7: Fire & Smoke -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M14 25C14 25 6 20 6 13C6 9 9 6 12 5C11 8 13 10 13 10C13 10 12 7 15 5C18 3 22 6 22 10C22 14 19 16 19 16C19 16 21 13 19 11C18 14 16 15 14 18C14 18 16 15 15 12C13 15 14 25 14 25Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_13">נזקי שריפה ועשן</h3>
-          <p class="sdg-card-text" data-i18n="services_p_42">נזקי שריפה ועשן משפיעים על מבנה הנכס, מערכות החשמל, הריהוט ואיכות האוויר. הערכה לא מקצועית מחמיצה נזקים נרחבים. שמאי רכוש מנוסה יבצע סקר מקיף שיבטיח פיצוי ראוי לכל היקף הנזק.</p>
-        </div>
-      </article>
-
-      <!-- Image Tile 3 -->
-      <div class="sdg-image-tile sdg-image-tile--3">
-        <div class="sdg-image-label" data-i18n="services_div_106">תיעוד נזקי שריפה</div>
-        <img data-placeholder="services-damage-grid-image-3" data-context="Fire and smoke damage assessment in an Israeli residential property, showing charred walls and ceiling, professional damage documentation context, clear evidence photography style" width="600" height="400" src="/assets/site-services-damage-grid-image-3.webp" alt="נזקי שריפה ועשן בנכס" data-i18n-alt="services_alt_116">
-      </div>
-
-      <!-- Card 8: Weather Damage -->
-      <article class="sdg-card">
-        <div class="sdg-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M14 4V6M14 22V24M4 14H6M22 14H24M6.34 6.34L7.76 7.76M20.24 20.24L21.66 21.66M6.34 21.66L7.76 20.24M20.24 7.76L21.66 6.34" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1.8"></circle>
-            <path d="M10 22C10 22 8 25 12 25" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M15 24C15 24 13 27 17 27" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="sdg-card-body">
-          <h3 class="sdg-card-title" data-i18n="services_h3_14">נזקי מזג אוויר</h3>
-          <p class="sdg-card-text" data-i18n="services_p_43">סערות, רוחות ואירועי גשם קיצוניים גורמים לנזקים שחברות ביטוח מנסות לייחס לבלאי רגיל. שמאי רכוש מטעמכם יוכיח את הקשר הישיר לאירוע מזג האוויר ויבטיח שתקבלו את הפיצוי המגיע לכם.</p>
-        </div>
-      </article>
-
-      <!-- Image Tile 4 -->
-      <div class="sdg-image-tile sdg-image-tile--4">
-        <div class="sdg-image-label" data-i18n="services_div_107">נזקי סערה</div>
-        <img data-placeholder="services-damage-grid-image-4" data-context="Weather and storm damage to Israeli residential building exterior showing cracked walls, broken windows, water infiltration marks, professional property damage documentation context" width="600" height="400" src="/assets/site-services-damage-grid-image-4.webp" alt="נזקי מזג אוויר בנכס" data-i18n-alt="services_alt_117">
-      </div>
-
-    </div>
-    <!-- /sdg-grid -->
-
-    <!-- Bottom CTA strip -->
-    <div class="sdg-cta-strip">
-      <p class="sdg-cta-text" data-i18n="services_p_44">לא בטוחים אם הנזק שלכם מכוסה? צרו קשר לייעוץ ראשוני ללא עלות.</p>
-      <a href="/contact" class="sdg-cta-btn" data-i18n="services_link_78">לייעוץ ראשוני חינם</a>
-    </div>
-
-  </div>
-
-  <!-- Bottom stepped divider -->
-  <div class="sdg-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,64 L0,32 L200,32 L200,16 L400,16 L400,32 L600,32 L600,16 L800,16 L800,32 L1000,32 L1000,16 L1200,16 L1200,64 Z" fill="#1E3A5F"></path>
-    </svg>
-  </div>
-
-</section>
-
-<section class="services-benefits-section" data-layout-spec="שירותים-benefits" dir="rtl">
-  <div class="services-benefits-container">
-
-    <!-- Centered Intro Block -->
-    <div class="services-benefits-intro">
-      <span class="services-benefits-eyebrow" data-i18n="services_span_73">למה ייצוג עצמאי משנה הכל</span>
-      <h2 class="services-benefits-heading" data-i18n="services_h2_3">שמאי רכוש מטעם המבוטח — המקצוען שעומד לצידך</h2>
-      <p class="services-benefits-lead" data-i18n="services_p_45">חברת הביטוח מגיעה עם שמאי מטעמה. אתה זכאי לאותה מומחיות — רק שהיא תעבוד בשבילך. ייצוג עצמאי של שמאי רכוש מנוסה הוא ההבדל בין פיצוי חלקי לבין פיצוי הוגן ומלא.</p>
-    </div>
-
-    <!-- Three Benefit Panels -->
-    <div class="services-benefits-panels">
-
-      <article class="services-benefits-panel">
-        <div class="services-benefits-panel-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="4" width="22" height="30" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"></rect>
-            <path d="M10 12h14M10 17h14M10 22h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="30" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-            <path d="M27 30l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div class="services-benefits-panel-content">
-          <h3 class="services-benefits-panel-title" data-i18n="services_h3_15">מקצוען שעובד בשבילך בלבד</h3>
-          <p class="services-benefits-panel-text" data-i18n="services_p_46">שמאי מטעם חברת הביטוח נועד לשמור על האינטרסים שלה — לא שלך. יגאל רויטמן פועל אך ורק מטעמך, בוחן את הנזק ללא פשרות ומגן על זכויותיך מול חברת הביטוח לאורך כל התהליך.</p>
-        </div>
-      </article>
-
-      <article class="services-benefits-panel">
-        <div class="services-benefits-panel-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 32l6-8 5 4 6-10 7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-            <circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.8" fill="none"></circle>
-            <line x1="17.5" y1="16.5" x2="22" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
-          </svg>
-        </div>
-        <div class="services-benefits-panel-content">
-          <h3 class="services-benefits-panel-title" data-i18n="services_h3_16">תיעוד נזקים מדויק ומקיף</h3>
-          <p class="services-benefits-panel-text" data-i18n="services_p_47">נזקי מים, רטיבות, עלייה קפילרית, קילופי קירות, הצפות, שריפה ונזקי מזג אוויר — כל נזק מתועד בשיטתיות ובמקצועיות. תיעוד מדויק הוא הבסיס לכל תביעה מוצלחת, ואנו לא מאפשרים לאף פריט לחמוק מהרשימה.</p>
-        </div>
-      </article>
-
-      <article class="services-benefits-panel">
-        <div class="services-benefits-panel-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20 6l2.5 7.5H30l-6.2 4.5 2.4 7.5L20 21l-6.2 4.5 2.4-7.5L10 13.5h7.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"></path>
-            <path d="M12 30h16M14 34h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="services-benefits-panel-content">
-          <h3 class="services-benefits-panel-title" data-i18n="services_h3_17">עמדה חזקה לפיצוי הוגן</h3>
-          <p class="services-benefits-panel-text" data-i18n="services_p_48">חוות דעת מקצועית של שמאי רכוש מנוסה מעניקה לתביעתך משקל ממשי. אנו מציגים את הממצאים בצורה שאינה ניתנת לפרשנות שגויה, ומנהלים משא ומתן מול חברת הביטוח עד לקבלת הפיצוי שמגיע לך.</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-
-  <!-- Bottom Divider: folded-paper reveal into light section -->
-  <div class="services-benefits-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,72 L0,36 L120,28 L240,42 L360,24 L480,38 L600,20 L720,36 L840,22 L960,40 L1080,26 L1200,38 L1200,72 Z" fill="#FFFFFF"></path>
-    </svg>
-  </div>
-
-</section>
-
-<section class="services-scope-section" data-layout-spec="שירותים-scope" dir="rtl">
-  <div class="services-scope-container">
-
-    <!-- Content Column -->
-    <div class="services-scope-content">
-      <div class="services-scope-header">
-        <span class="services-scope-label" data-i18n="services_span_74">היקף השירות</span>
-        <h2 class="services-scope-title" data-i18n="services_h2_4">מה כולל הליווי שלי מול חברת הביטוח</h2>
-        <p class="services-scope-intro" data-i18n="services_p_49">כשמאי רכוש מטעם המבוטח, אני מלווה אתכם בכל שלבי התביעה — מהרגע שהנזק התגלה ועד לקבלת הפיצוי הראוי. הנה ארבעת עמודי התווך של העבודה המקצועית שאני מבצע עבורכם.</p>
-      </div>
-
-      <div class="services-scope-blocks">
-
-        <article class="services-scope-block">
-          <div class="services-scope-block-icon">
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-          </div>
-          <div class="services-scope-block-content">
-            <h3 data-i18n="services_h3_18">בדיקת הנזק בשטח</h3>
-            <p data-i18n="services_p_50">אגיע לנכס, אבחן את הנזק לעומקו ואתעד אותו בצורה מקצועית — נזקי מים, רטיבות, עלייה קפילרית, הצפות, שריפה או נזקי מזג אוויר. תיעוד מדויק הוא הבסיס לכל תביעה מוצלחת.</p>
-          </div>
-        </article>
-
-        <div class="services-scope-divider"></div>
-
-        <article class="services-scope-block">
-          <div class="services-scope-block-icon">
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- LEFT COLUMN: Image + Preparation Card -->
+    <div class="contact-intro-visual-col">
+      <div class="contact-intro-image-wrap">
+        <img data-placeholder="contact-intro-image-1" data-context="A professional property appraiser in Israel examining water damage on a wall inside a residential apartment. He holds a clipboard and wears business-casual attire. The scene shows a bright, orderly home interior with visible moisture staining on white plaster walls. Natural light, realistic inspection context, calm and credible atmosphere." width="600" height="420" src="/assets/site-contact-intro-image-1.webp" alt="Property appraiser inspecting water damage in apartment" class="contact-intro-img">
+        <div class="contact-intro-prep-card">
+          <div class="contact-intro-prep-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
               <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1912,119 +1417,303 @@ html[dir="rtl"] body {
               <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
           </div>
-          <div class="services-scope-block-content">
-            <h3 data-i18n="services_h3_19">הכנת חוות דעת שמאית</h3>
-            <p data-i18n="services_p_51">אכין חוות דעת שמאית מפורטת ומנומקת, הכוללת הערכת שווי הנזק, פירוט עלויות השיקום וביסוס מקצועי לכל סעיף. המסמך ישמש כנשק המרכזי שלכם מול חברת הביטוח.</p>
+          <div class="contact-intro-prep-content">
+            <h3 class="contact-intro-prep-title">How to prepare for the call?</h3>
+            <ul class="contact-intro-prep-list">
+              <li>Brief description of the damage and its location in the property</li>
+              <li>Insurance company name and policy number</li>
+              <li>Current stage of claim handling</li>
+              <li>Initial photos of the damage (if available)</li>
+            </ul>
           </div>
-        </article>
-
-        <div class="services-scope-divider"></div>
-
-        <article class="services-scope-block">
-          <div class="services-scope-block-icon">
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-          </div>
-          <div class="services-scope-block-content">
-            <h3 data-i18n="services_h3_20">בחינת עמדת חברת הביטוח</h3>
-            <p data-i18n="services_p_52">אנתח את הצעת הפיצוי של חברת הביטוח ואאתר פערים, קיצורי דרך ועמדות שגויות. אם השמאי מטעם המבטחת הפחית שלא כדין — אדע לזהות זאת ולהתמודד מולו עם נתונים ומקצועיות.</p>
-          </div>
-        </article>
-
-        <div class="services-scope-divider"></div>
-
-        <article class="services-scope-block">
-          <div class="services-scope-block-icon">
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="services-scope-block-content">
-            <h3 data-i18n="services_h3_21">ליווי לאורך כל תהליך התביעה</h3>
-            <p data-i18n="services_p_53">אהיה לצדכם בכל שלב — מהגשת התביעה, דרך המשא ומתן עם חברת הביטוח ועד לסגירת התיק. לא תישארו לבד מול הבירוקרטיה; אני מטפל בכל הפרטים כדי שתקבלו את מה שמגיע לכם.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- Image Column -->
-    <div class="services-scope-image-col">
-      <div class="services-scope-image-wrapper">
-        <img data-placeholder="services-scope-image-1" data-context="A professional property appraiser desk scene viewed from slightly above: organized claim documents and inspection reports spread on a clean white desk, a notepad with handwritten notes in Hebrew, a pen, measuring tape, and small residential material samples (tile fragment, paint chip). Soft natural window light from the side. Calm, professional atmosphere. Muted navy, cream and warm grey tones. No people visible — focus on the organized documentation process." width="600" height="760" src="/assets/site-services-scope-image-1.webp" alt="שולחן עבודה של שמאי רכוש עם מסמכי תביעה ודוחות נזק" data-i18n-alt="services_alt_118">
-        <div class="services-scope-image-badge" data-i18n="services_div_108">
-          <span class="services-scope-badge-number">+20</span>
-          <span class="services-scope-badge-text">שנות ניסיון בשמאות רכוש</span>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Perforated ledger bottom divider -->
-  <div class="services-scope-divider-wrapper" aria-hidden="true">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,48 L0,20 Q10,14 20,20 Q30,26 40,20 Q50,14 60,20 Q70,26 80,20 Q90,14 100,20 Q110,26 120,20 Q130,14 140,20 Q150,26 160,20 Q170,14 180,20 Q190,26 200,20 Q210,14 220,20 Q230,26 240,20 Q250,14 260,20 Q270,26 280,20 Q290,14 300,20 Q310,26 320,20 Q330,14 340,20 Q350,26 360,20 Q370,14 380,20 Q390,26 400,20 Q410,14 420,20 Q430,26 440,20 Q450,14 460,20 Q470,26 480,20 Q490,14 500,20 Q510,26 520,20 Q530,14 540,20 Q550,26 560,20 Q570,14 580,20 Q590,26 600,20 Q610,14 620,20 Q630,26 640,20 Q650,14 660,20 Q670,26 680,20 Q690,14 700,20 Q710,26 720,20 Q730,14 740,20 Q750,26 760,20 Q770,14 780,20 Q790,26 800,20 Q810,14 820,20 Q830,26 840,20 Q850,14 860,20 Q870,26 880,20 Q890,14 900,20 Q910,26 920,20 Q930,14 940,20 Q950,26 960,20 Q970,14 980,20 Q990,26 1000,20 Q1010,14 1020,20 Q1030,26 1040,20 Q1050,14 1060,20 Q1070,26 1080,20 Q1090,14 1100,20 Q1110,26 1120,20 Q1130,14 1140,20 Q1150,26 1160,20 Q1170,14 1180,20 Q1190,26 1200,20 L1200,48 Z" fill="#FFFFFF"></path>
+  <!-- Bottom Diagonal Divider -->
+  <div class="contact-intro-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,28 L1200,0 L1200,60 Z" fill="#FFFFFF"></path>
     </svg>
   </div>
 
 </section>
 
-<section class="services-faq-section" data-layout-spec="שירותים-faq" dir="rtl">
-  <div class="services-faq-container">
-    <div class="services-faq-header">
-      <h2 class="services-faq-title" data-i18n="services_h2_5">שאלות נפוצות</h2>
-      <p class="services-faq-subtitle" data-i18n="services_p_54">כל מה שחשוב לדעת לפני שמתחילים בתהליך תביעת הביטוח</p>
+<section class="contact-contact-options-section" data-layout-spec="צור קשר-contact-options" dir="rtl">
+  <div class="contact-options-container">
+    <div class="contact-options-header">
+      <h2 class="contact-options-title">How would you like to get in touch?</h2>
+      <p class="contact-options-subtitle">Choose the convenient way for you — I'll respond promptly and be available for any questions regarding insurance claims and property damage</p>
     </div>
-    <div class="services-faq-grid">
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_22">מתי כדאי לפנות לשמאי רכוש?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_55">מיד לאחר גילוי הנזק — עוד לפני שמתקשרים לחברת הביטוח. שמאי רכוש מטעמכם יתעד את הנזק כהלכה, ימנע מחיקת ראיות, ויוודא שהתביעה מוגשת בצורה מלאה ומבוססת. פנייה מוקדמת מגדילה משמעותית את סיכויי קבלת פיצוי הוגן.</p>
+    <div class="contact-options-grid">
+      <!-- Phone Card -->
+      <article class="contact-option-card">
+        <div class="contact-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.49 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <h3 class="contact-card-title">Phone call</h3>
+          <p class="contact-card-desc">Suitable for a brief initial call — briefly describe the type of damage, property location and your insurance company. I'll get back to you promptly to schedule a proper conversation.</p>
+          <div class="contact-card-detail">Response Time<br>            Within a few hours on business days</div>
+          <a href="tel:055-9139983" class="contact-card-cta">
+            <span>055-9139983</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </a>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_23">כבר דיברתי עם חברת הביטוח — האם עדיין ניתן לקבל עזרה?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_56">בהחלט. גם אם כבר פתחתם תביעה או קיבלתם הצעת פיצוי ראשונית מחברת הביטוח, שמאי מטעם המבוטח יכול לבחון את ההצעה, לאתר פערים, ולנהל משא ומתן מקצועי מולה. לא מאוחר מדי לפעול לטובתכם.</p>
+      <!-- Email Card -->
+      <article class="contact-option-card">
+        <div class="contact-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <polyline points="22,4 12,13 2,4"></polyline>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <h3 class="contact-card-title">Email</h3>
+          <p class="contact-card-desc">Suitable for detailed inquiries — you can attach photos of the damage, existing appraiser report, policy documents, or any other relevant document. I'll read carefully and respond in writing with an initial assessment.</p>
+          <div class="contact-card-detail">Response Time<br>            Within one business day</div>
+          <a href="mailto:Igalro1974@gmail.com" class="contact-card-cta">Igalro1974@gmail.com</a>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_24">אילו סוגי נזקים מטופלים?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_57">אני מתמחה בטיפול בנזקי מים ורטיבות, סתימות, קילופי קירות, עלייה קפילרית, הצפות, נזקי שריפה ונזקי מזג אוויר. כל נזק מתועד באופן מקצועי ומוגש לחברת הביטוח עם חוות דעת שמאית מפורטת ומבוססת.</p>
+      <!-- WhatsApp / Message Card -->
+      <article class="contact-option-card">
+        <div class="contact-card-icon-wrap">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <h3 class="contact-card-title">WhatsApp message</h3>
+          <p class="contact-card-desc">The most convenient way for initial contact — send a brief message with damage description and photos if available. As a property appraiser representing the insured, I'll assess the situation and get back to you quickly.</p>
+          <div class="contact-card-detail">Response Time<br>            Quick response during business hours</div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="contact-card-cta" style="display:none !important;">Send Message Now</a>
+        </div>
       </article>
+    </div>
 
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_25">מה ההבדל בין שמאי הביטוח לשמאי מטעם המבוטח?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_58">שמאי מטעם חברת הביטוח פועל לטובת החברה ולא לטובתכם. שמאי רכוש מטעם המבוטח — כמוני — פועל אך ורק לטובתכם: בודק את הנזק באופן עצמאי, מגן על זכויותיכם, ומוודא שהפיצוי שתקבלו משקף את הנזק האמיתי.</p>
+    <!-- Business Hours Section -->
+    <div class="contact-business-hours" data-element-id="element-ai-1777630649813-bh7x2k" data-element-type="section">
+      <div class="contact-hours-header">
+        <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <h3 class="contact-hours-title">Operating Hours</h3>
+      </div>
+      <ul class="contact-hours-list">
+        <li class="contact-hours-row">Sunday<br>          09:00 - 19:00</li>
+        <li class="contact-hours-row">Monday<br>          09:00 - 19:00</li>
+        <li class="contact-hours-row">Tuesday<br>          09:00 - 19:00</li>
+        <li class="contact-hours-row">Wednesday<br>          09:00 - 19:00</li>
+        <li class="contact-hours-row">Thursday<br>          09:00 - 19:00</li>
+        <li class="contact-hours-row">Friday<br>          09:00 - 13:00</li>
+        <li class="contact-hours-row contact-hours-row--closed">Saturday<br>          Closed</li>
+      </ul>
+    </div>
+
+    <div class="contact-options-note">
+      <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>Every inquiry is handled with complete confidentiality. Initial consultation at no cost and without obligation.</span>
+    </div>
+  </div>
+  <!-- Bottom divider transitioning to dark section -->
+  <div class="contact-options-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,72 L0,36 Q100,28 200,38 T400,30 Q500,24 600,34 T800,28 Q900,22 1000,32 T1200,26 L1200,72 Z" fill="var(--bg-dark)"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="contact-consultation-section" data-layout-spec="צור קשר-consultation" dir="rtl">
+  <div class="contact-consultation-container">
+
+    <!-- Right column: explanatory text -->
+    <div class="contact-consultation-intro">
+      <span class="contact-consultation-label">What happens after making contact</span>
+      <h2 class="contact-consultation-heading">Simple, professional and transparent process — from the first moment</h2>
+      <p class="contact-consultation-body">When dealing with apartment damage against the insurance company, uncertainty is usually the biggest difficulty. As a property appraiser representing the insured, I'm here to provide you with a clear and professional picture from the very first conversation — and ensure you know exactly what to expect moving forward.</p>
+      <div class="contact-consultation-rule"></div>
+      <p class="contact-consultation-note">The inquiry is non-binding — you can ask a question and receive initial guidance at no cost.</p>
+    </div>
+
+    <!-- Left column: three steps -->
+    <div class="contact-consultation-steps">
+
+      <div class="contact-consultation-step">
+        <div class="step-number-block">
+          <span class="step-number">01</span>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Describe the damage and insurance status</h3>
+          <p class="step-desc">Tell me about the type of damage — water damage, moisture, wall peeling, flooding, fire, weather — and about the existing policy. The more detailed the information, the better I can assist already in the initial stage.</p>
+        </div>
+      </div>
+
+      <div class="contact-consultation-step">
+        <div class="step-number-block">
+          <span class="step-number">02</span>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Get initial guidance regarding the claim</h3>
+          <p class="step-desc">I'll review the details and provide an initial assessment: whether there's a basis for a claim, what's the recommended approach with the insurance company, and what are the chances of receiving fair compensation according to the described damage.</p>
+        </div>
+      </div>
+
+      <div class="contact-consultation-step">
+        <div class="step-number-block">
+          <span class="step-number">03</span>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Understand what the next step is for you</h3>
+          <p class="step-desc">I'll explain what professional accompaniment by a property appraiser representing the insured includes, and what you can expect in terms of professional on-site inspection, preparation of appraisal opinion, and negotiation with the insurer.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom paper-notched divider -->
+  <div class="contact-consultation-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,64 L0,28 Q30,22 60,28 T120,24 Q150,28 180,22 T240,26 Q270,22 300,28 T360,24 Q390,28 420,22 T480,26 Q510,22 540,28 T600,24 Q630,28 660,22 T720,26 Q750,22 780,28 T840,24 Q870,28 900,22 T960,26 Q990,22 1020,28 T1080,24 Q1110,28 1140,22 T1200,26 L1200,64 Z" fill="#FAFAF8"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="contact-form-section" dir="rtl" data-layout-spec="צור קשר-form">
+  <div class="contact-form-section__container">
+
+    <!-- Intro Block -->
+    <div class="contact-form-section__intro">
+      <h2 class="contact-form-section__heading">Send us a message</h2>
+      <p class="contact-form-section__subtext">Feel free to contact us with any questions regarding property damage and insurance claims. As a property appraiser representing the insured, Yigal Roitman will be happy to hear the details of your case and explain how we can assist you with the insurance company.</p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="contact-form-section__card">
+      <form class="contact-form" novalidate="">
+
+        <div class="contact-form-section__field-group">
+          <label class="contact-form-section__label" for="cf-name">Full Name</label>
+          <input class="contact-form-section__input" type="text" id="cf-name" name="name" placeholder="Israel Israeli" required="">
+        </div>
+
+        <div class="contact-form-section__field-group">
+          <label class="contact-form-section__label" for="cf-email">Email Address</label>
+          <input class="contact-form-section__input" type="email" id="cf-email" name="email" placeholder="example@email.com" required="">
+        </div>
+
+        <div class="contact-form-section__field-group">
+          <label class="contact-form-section__label" for="cf-phone">Phone</label>
+          <input class="contact-form-section__input" type="tel" id="cf-phone" name="phone" placeholder="050-0000000">
+        </div>
+
+        <div class="contact-form-section__field-group">
+          <label class="contact-form-section__label" for="cf-message">Inquiry Details</label>
+          <textarea class="contact-form-section__input contact-form-section__textarea" id="cf-message" name="message" rows="5" placeholder="Briefly describe the property damage, type of damage (water, fire, weather, etc.)" ...)="" ומה="" אתם="" צריכים'="" required=""></textarea>
+        </div>
+
+        <div class="privacy-consent">
+          <label class="privacy-consent-label">
+            <input type="checkbox" name="privacy_consent" class="privacy-consent-checkbox" required="">
+            <span><span>I have read and agree to the</span><a href="/en/terms" target="_blank">Terms of Use</a> <span> and to the</span><a href="/en/privacy" target="_blank">Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <button type="submit" class="contact-form-section__submit btn-primary">Send inquiry</button>
+
+      </form>
+    </div>
+    <!-- End Form Card -->
+
+  </div>
+
+  <!-- Bottom Divider -->
+  <div class="contact-form-section__divider-wrapper" aria-hidden="true">
+    <div class="contact-form-section__rule"></div>
+  </div>
+
+</section>
+
+<section class="contact-faq-section" data-layout-spec="צור קשר-faq" dir="rtl">
+  <div class="contact-faq-container">
+    <div class="contact-faq-header">
+      <span class="contact-faq-label">Frequently Asked Questions</span>
+      <h2 class="contact-faq-title">Everything you wanted to know before contacting us</h2>
+      <p class="contact-faq-subtitle">Direct answers to the most common questions we receive before the first contact</p>
+    </div>
+    <div class="contact-faq-grid">
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><circle cx="12" cy="16" r="0.5" fill="currentColor"></circle></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">What should be mentioned in the initial inquiry?</h3>
+            <p class="faq-answer">It's helpful to specify the type of damage (water damage, moisture, fire, etc.), the location in the apartment, and when the damage first occurred. No special preparation is needed — we guide you from the very first moment.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_26">כמה עולה שירות שמאי רכוש פרטי?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_59">שכר הטרחה מחושב בדרך כלל כאחוז מסכום הפיצוי שהושג. המשמעות היא שאני מתוגמל רק כשאתם מרוויחים — מה שמבטיח שהאינטרס שלי זהה לאינטרס שלכם. בפועל, הפיצוי המוגדל שמושג בסיוע שמאי מכסה לרוב את עלות השירות ומעבר לה.</p>
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"></path></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">I already contacted the insurance company — is that a problem?</h3>
+            <p class="faq-answer">No. Even if a claim has already been opened or an appraiser from the insurance company has arrived, it's still possible to appoint an appraiser representing the insured. Often this is exactly the stage where our intervention makes the difference.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_27">כיצד מוערך נזק רטיבות או עלייה קפילרית?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_60">הערכת נזקי רטיבות דורשת בדיקה מקצועית של מקור הנזק, היקפו, ועלות השיקום הנדרשת. אשתמש בכלי מדידה מתאימים, תיעוד צילומי מפורט, ולעיתים בחוות דעת של בעלי מקצוע נוספים — כדי לבנות תיק תביעה חזק ומוכח מול חברת הביטוח.</p>
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">There's urgent damage — what do we do?</h3>
+            <p class="faq-answer">In case of active damage such as flooding or fire — first ensure safety and stop the source of damage. Then contact us as soon as possible. Early documentation is critical for the claim, and we can arrive on site with short notice.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_28">מה עלי להכין לפני הפגישה הראשונה?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_61">כדאי לאסוף את פוליסת הביטוח שלכם, כל תכתובת עם חברת הביטוח, ותיעוד קיים של הנזק (תמונות, חשבוניות, דוחות). אם אין בידיכם מסמכים — אין בעיה. נתחיל בסקר נזק מקיף ונבנה את התיק יחד מהשלב הראשון.</p>
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">What happens after contacting us?</h3>
+            <p class="faq-answer">After the initial contact, we usually get back to you within one business day. In the first conversation, we'll understand the situation, explain the next steps, and schedule a visit to document the damage — all clearly and without immediate commitment.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="services-faq-card">
-        <h3 class="services-faq-question" data-i18n="services_h3_29">כמה זמן אורך תהליך התביעה?</h3>
-        <p class="services-faq-answer" data-i18n="services_p_62">משך התהליך תלוי במורכבות הנזק ובהיענות חברת הביטוח. תביעות פשוטות יכולות להסתיים תוך מספר שבועות, בעוד תביעות מורכבות עשויות להימשך מספר חודשים. לאורך כל הדרך אני מלווה אתכם צעד אחר צעד ומעדכן בכל התפתחות.</p>
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">Does a property appraiser also work on weather damage and fire?</h3>
+            <p class="faq-answer">Absolutely. We handle all types of property damage — water damage, moisture, capillary rise, blockages, wall peeling, floods, fire damage, and storm and weather damage. Each case receives professional and customized treatment.</p>
+          </div>
+        </div>
       </article>
-
+      <article class="faq-card">
+        <div class="faq-card-inner">
+          <div class="faq-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="faq-content">
+            <h3 class="faq-question">Does your service involve upfront costs?</h3>
+            <p class="faq-answer">The first conversation and case review involve no cost. The fee for a property appraiser representing the insured is usually calculated as a percentage of the compensation amount achieved — so our interest is identical to yours.</p>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -2038,48 +1727,44 @@ html[dir="rtl"] body {
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-col--brand">
           <div class="footer-logo-wrap">
-            <img src="/assets/business-logo.webp" alt="יגאל רויטמן שמאות רכוש" class="logo" data-i18n-alt="services_alt_119">
+            <img src="/assets/business-logo.webp" alt="Igal Roitman Property Appraisal" class="logo">
           </div>
-          <p class="footer-tagline" data-i18n="services_p_63">שמאות רכוש מקצועית ואמינה — אנחנו עומדים לצדכם מול חברות הביטוח.</p>
+          <p class="footer-tagline">Professional and reliable property appraisal — we stand by your side against insurance companies.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook" style="display:none !important;" data-i18n-aria-label="services_aria_label_122"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram" style="display:none !important;" data-i18n-aria-label="services_aria_label_123"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/972559139983" aria-label="WhatsApp" data-i18n-aria-label="services_aria_label_124"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook" style="display:none !important;" data-i18n-aria-label="contact_aria_label_127"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="display:none !important;" data-i18n-aria-label="contact_aria_label_128"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/972559139983" aria-label="WhatsApp" data-i18n-aria-label="contact_aria_label_129"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
         <!-- Column 2: Quick Links -->
         <div class="footer-col">
-          <h3 class="footer-heading" data-i18n="services_h3_30"><span class="footer-heading-line"></span>ניווט מהיר</h3>
+          <h3 class="footer-heading">Quick Navigation</h3>
           <ul class="footer-nav">
-            <li data-i18n="services_li_93"><a href="/services" data-i18n="services_link_79">שירותים</a></li>
-            <li data-i18n="services_li_94"><a href="/about" data-i18n="services_link_80">אודות</a></li>
-            <li data-i18n="services_li_95"><a href="/contact" data-i18n="services_link_81">צור קשר</a></li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Contact</li>
           </ul>
         </div>
 
         <!-- Column 3: Contact Info -->
         <div class="footer-col">
-          <h3 class="footer-heading" data-i18n="services_h3_31"><span class="footer-heading-line"></span>יצירת קשר</h3>
+          <h3 class="footer-heading">Contact</h3>
           <ul class="footer-contact">
-            <li data-i18n="services_li_96">
-              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-              <span class="contact-text"><a href="mailto:Igalro1974@gmail.com" data-i18n="services_link_82">Igalro1974@gmail.com</a></span>
-            </li>
+            <li>Igalro1974@gmail.com</li>
             <li>
               <span class="contact-icon"><i class="fas fa-phone"></i></span>
               <span class="contact-text"><a href="tel:055-9139983">055-9139983</a></span>
             </li>
-            <li data-i18n="services_li_97"><a href="/" data-i18n="services_link_83"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-              <span class="contact-text">דרור 54, ראשון לציון, ישראל, 7529637, Israel</span></a></li>
+            <li>Dror 54, Rishon LeZion, Israel, 7529637, Israel</li>
           </ul>
         </div>
 
         <!-- Column 4: About Snippet -->
         <div class="footer-col footer-col--about">
-          <h3 class="footer-heading" data-i18n="services_h3_32"><span class="footer-heading-line"></span>מי אנחנו</h3>
-          <p class="footer-about-text" data-i18n="services_p_64">יגאל רויטמן שמאות רכוש מתמחה בהערכת נזקי רכוש, ליווי תביעות ביטוח וייצוג מקצועי של בעלי הנכסים. עם ניסיון רב שנים בתחום, אנו מבטיחים תיעוד מדויק ותוצאות מיטביות.</p>
-          <a href="/contact" class="footer-cta" data-i18n="services_link_84">קבע פגישת ייעוץ</a>
+          <h3 class="footer-heading">About Us</h3>
+          <p class="footer-about-text">Yigal Roitman Property Appraisal specializes in property damage assessment, insurance claim guidance, and professional representation of property owners. With many years of experience in the field, we guarantee accurate documentation and optimal results.</p>
+          <a href="/en/contact" class="footer-cta">Schedule Consultation</a>
         </div>
 
       </div>
@@ -2090,26 +1775,28 @@ html[dir="rtl"] body {
   <div class="footer-bottom">
     <div class="footer-container">
       <div class="footer-bottom-inner">
-        <p class="footer-copyright" data-i18n="services_p_65">© 2026 יגאל רויטמן שמאות רכוש. כל הזכויות שמורות.</p>
+        <p class="footer-copyright">© 2026 Yigal Roitman Property Appraisal. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="/privacy" data-i18n="services_link_85">מדיניות פרטיות</a>
+          <a href="/en/privacy">Privacy Policy</a>
           <span class="footer-legal-sep"></span>
-          <a href="/terms" data-i18n="services_link_86">תנאי שימוש</a>
+          <a href="/en/terms">Terms of Use</a>
           <span class="footer-legal-sep"></span>
-          <a href="/accessibility" data-i18n="services_link_87">נגישות</a>
+          <a href="/en/accessibility">Accessibility</a>
           <span class="footer-legal-sep"></span>
-          <a href="https://zappy5.com" target="_blank" class="zappy-attribution" data-i18n="services_link_88">נוצר באמצעות Zappy</a>
+          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">Created with Zappy</a>
         </div>
       </div>
     </div>
   </div>
 </footer>
   
-  <a href="https://wa.me/972559139983" class="whatsapp-float" aria-label="WhatsApp" data-i18n-aria-label="services_aria_label_125">
+  <a href="https://wa.me/972559139983" class="whatsapp-float" aria-label="WhatsApp" data-i18n-aria-label="contact_aria_label_130">
     <i class="fab fa-whatsapp"></i>
   </a>
   
-  <div data-integration="accessibility:toolbar"></div>
+  <script src="/script.js"></script>
+
+    <div data-integration="accessibility:toolbar"></div>
 
 
 
@@ -6219,57 +5906,94 @@ html[dir="rtl"] body {
 })();
 </script>
 
-    <script src="/script.js"></script>
-
-    <script id="zappy-mobile-submenu-script">
-    (function() {
-      function initMobileSubmenuToggles() {
-        if (window.innerWidth > 768) {
-          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
-          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
-          return;
+<!-- Zappy Language Switcher Icon Color Fix -->
+<script>
+(function() {
+  function fixLanguageSwitcherColor() {
+    var switcher = document.querySelector('.lang-switcher-current');
+    var svg = switcher ? switcher.querySelector('svg') : null;
+    if (!switcher || !svg) return;
+    
+    var navbar = document.querySelector('.navbar') || 
+                 document.querySelector('nav') || 
+                 document.querySelector('header');
+    if (!navbar) return;
+    
+    // Get effective background color by walking up DOM tree
+    function getEffectiveBackgroundColor(element) {
+      var el = element;
+      var maxDepth = 10;
+      
+      while (el && maxDepth > 0) {
+        var style = window.getComputedStyle(el);
+        var bg = style.backgroundColor;
+        
+        if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
+          return bg;
         }
-        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
-        items.forEach(function(li) {
-          if (li.querySelector('.mobile-submenu-toggle')) return;
-          var submenu = li.querySelector('.sub-menu');
-          var parentLink = li.querySelector(':scope > a');
-          if (!submenu || !parentLink) return;
-          var toggleBtn = document.createElement('button');
-          toggleBtn.className = 'mobile-submenu-toggle';
-          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
-          toggleBtn.setAttribute('type', 'button');
-          parentLink.insertAdjacentElement('afterend', toggleBtn);
-          toggleBtn.addEventListener('click', function(e) {
-            e.preventDefault(); e.stopPropagation();
-            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
-              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
-            });
-            submenu.classList.toggle('mobile-expanded');
-            toggleBtn.classList.toggle('expanded');
-          });
-        });
+        
+        var bgImage = style.backgroundImage;
+        if (bgImage && bgImage !== 'none') {
+          var gradientMatch = bgImage.match(/rgba?\([^)]+\)|#[a-fA-F0-9]{3,8}/);
+          if (gradientMatch) return gradientMatch[0];
+        }
+        
+        el = el.parentElement;
+        maxDepth--;
       }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
-      else { initMobileSubmenuToggles(); }
-      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
-      // Re-initialize when mobile menu becomes visible (MutationObserver)
-      var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.type === 'attributes') {
-            var target = mutation.target;
-            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
-              setTimeout(initMobileSubmenuToggles, 100);
-            }
-          }
-        });
-      });
-      setTimeout(function() {
-        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
-          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
-        });
-      }, 500);
-    })();
-    </script>
-</body>
-</html>
+      return 'rgb(255, 255, 255)';
+    }
+    
+    // Parse color string to RGB
+    function parseColor(colorStr) {
+      if (!colorStr) return null;
+      
+      var rgbMatch = colorStr.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (rgbMatch) {
+        return { r: parseInt(rgbMatch[1], 10), g: parseInt(rgbMatch[2], 10), b: parseInt(rgbMatch[3], 10) };
+      }
+      
+      var hexMatch = colorStr.match(/#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/);
+      if (hexMatch) {
+        return { r: parseInt(hexMatch[1], 16), g: parseInt(hexMatch[2], 16), b: parseInt(hexMatch[3], 16) };
+      }
+      
+      return null;
+    }
+    
+    // Calculate WCAG luminance
+    function getLuminance(rgb) {
+      if (!rgb) return 0.5;
+      var r = rgb.r / 255, g = rgb.g / 255, b = rgb.b / 255;
+      r = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+      g = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+      b = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
+    
+    var bgColor = getEffectiveBackgroundColor(navbar);
+    var rgb = parseColor(bgColor);
+    var luminance = getLuminance(rgb);
+    var isLightBackground = luminance > 0.4;
+    var iconColor = isLightBackground ? '#1a1a1a' : '#F3FAFF';
+    
+    svg.style.fill = iconColor;
+    svg.setAttribute('fill', iconColor);
+    switcher.style.color = iconColor;
+  }
+  
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixLanguageSwitcherColor);
+  } else {
+    fixLanguageSwitcherColor();
+  }
+  
+  // Also run after a short delay to catch late-loading styles
+  setTimeout(fixLanguageSwitcherColor, 100);
+  setTimeout(fixLanguageSwitcherColor, 500);
+  
+  // Run on resize
+  window.addEventListener('resize', fixLanguageSwitcherColor);
+})();
+</script></body></html>

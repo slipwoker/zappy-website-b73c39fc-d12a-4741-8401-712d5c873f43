@@ -8,6 +8,7 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
   </url>
   <url>
@@ -17,6 +18,17 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app" />
   </url>
   <url>
@@ -26,6 +38,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/services" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
   </url>
   <url>
@@ -35,6 +48,17 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/services</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/services" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/services" />
   </url>
   <url>
@@ -44,6 +68,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
   </url>
   <url>
@@ -53,6 +78,17 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/about</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/about" />
   </url>
   <url>
@@ -62,6 +98,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
   </url>
   <url>
@@ -71,6 +108,17 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/contact</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact" />
   </url>
   <url>
@@ -80,6 +128,7 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
   </url>
   <url>
@@ -89,6 +138,17 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/privacy</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/privacy" />
   </url>
   <url>
@@ -98,6 +158,7 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
   </url>
   <url>
@@ -107,6 +168,17 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/terms</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/terms" />
   </url>
   <url>
@@ -116,6 +188,7 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/accessibility" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/accessibility" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
   </url>
   <url>
@@ -125,6 +198,17 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/accessibility" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/accessibility" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
+  </url>
+  <url>
+    <loc>https://yigal-roitman-shmaut-rechush.zappy5.app/en/accessibility</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yigal-roitman-shmaut-rechush.zappy5.app/ru/accessibility" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yigal-roitman-shmaut-rechush.zappy5.app/en/accessibility" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yigal-roitman-shmaut-rechush.zappy5.app/accessibility" />
   </url>
 </urlset>
