@@ -765,6 +765,67 @@ html[dir="rtl"] body {
   background: #f5f5f5;
 }
 
+
+
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX */
+/* ZAPPY_MOBILE_NAV_ICON_ALIGNMENT_FIX_V2 */
+/* Keep mobile hamburger / phone buttons vertically centered even when the
+   generated navbar's children are all absolute/fixed and the navbar would
+   otherwise collapse to the top edge. */
+@media (max-width: 768px) {
+  .navbar,
+  nav.navbar {
+    min-height: 70px !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle,
+  .navbar > .phone-header-btn,
+  nav.navbar > .phone-header-btn,
+  .navbar .phone-header-btn,
+  nav.navbar .phone-header-btn {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    align-self: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 0 !important;
+  }
+
+  .navbar > .mobile-toggle,
+  nav.navbar > .mobile-toggle,
+  .navbar .mobile-toggle,
+  nav.navbar .mobile-toggle,
+  #mobileToggle {
+    display: flex !important;
+  }
+
+  html:not([data-zappy-site-type="ecommerce"]) .navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar > .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) .navbar .phone-header-btn,
+  html:not([data-zappy-site-type="ecommerce"]) nav.navbar .phone-header-btn {
+    display: flex !important;
+  }
+
+  html[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  body[data-zappy-site-type="ecommerce"] .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] header .phone-header-btn,
+  html[data-zappy-site-type="ecommerce"] nav .phone-header-btn {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+}
 </style>
 <!-- hreflang tags for SEO -->
 <link rel="alternate" hreflang="he" href="https://yigal-roitman-shmaut-rechush.zappy5.app/contact">
@@ -858,9 +919,43 @@ html[dir="ltr"] .nav-brand {
     margin-right: 0 !important;
   }
 
-  /* E-commerce flat nav layout (no nav-right-group wrapper):
-     brand → menu → icons. Mirrors the runtime CSS from
-     ensureRuntimeCssInjected so layout is correct even before JS loads. */
+  /* E-commerce layout WITH nav-right-group wrapper:
+     Menu links wrap downward while row 1 remains aligned with the logo. */
+  html[dir="ltr"] .nav-right-group > .nav-brand {
+    order: -1 !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-menu,
+  html[dir="ltr"] .nav-right-group > #navMenu {
+    order: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 24px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-menu > li,
+  html[dir="ltr"] .nav-right-group > #navMenu > li {
+    flex: 0 0 auto !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-ecommerce-icons {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  html[dir="ltr"] .nav-right-group > .nav-ecommerce-icons.nav-icons-left {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+
+  /* E-commerce flat nav layout (no nav-right-group wrapper): */
   html[dir="ltr"] .nav-container > .nav-brand {
     order: -1 !important;
   }
@@ -869,15 +964,56 @@ html[dir="ltr"] .nav-brand {
     order: 1 !important;
     margin-inline-start: 0 !important;
     margin-inline-end: 24px !important;
-    flex: 0 1 auto !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="ltr"] .nav-container > .nav-menu > li,
+  html[dir="ltr"] .nav-container > #navMenu > li {
+    flex: 0 0 auto !important;
   }
   html[dir="ltr"] .nav-container > .lang-switcher,
   html[dir="ltr"] .nav-container > .nav-ecommerce-icons {
     order: 2 !important;
     margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
   }
   html[dir="ltr"] .nav-container > .nav-ecommerce-icons.nav-icons-left {
     margin-inline-start: auto !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-menu,
+  html[dir="rtl"] .nav-right-group > #navMenu,
+  html[dir="rtl"] .nav-container > .nav-menu,
+  html[dir="rtl"] .nav-container > #navMenu {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-height: 44px !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+    row-gap: 4px !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-menu > li,
+  html[dir="rtl"] .nav-right-group > #navMenu > li,
+  html[dir="rtl"] .nav-container > .nav-menu > li,
+  html[dir="rtl"] .nav-container > #navMenu > li {
+    flex: 0 0 auto !important;
+  }
+  html[dir="rtl"] .nav-right-group > .nav-ecommerce-icons,
+  html[dir="rtl"] .nav-right-group > .nav-ecommerce-icons.nav-icons-left,
+  html[dir="rtl"] .nav-container > .nav-ecommerce-icons,
+  html[dir="rtl"] .nav-container > .nav-ecommerce-icons.nav-icons-left {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
   }
 }
 
@@ -886,10 +1022,13 @@ html[dir="ltr"] .nav-search-box {
   direction: ltr !important;
 }
 html[dir="ltr"] .nav-search-btn {
+  position: absolute !important;
   left: auto !important;
   right: 4px !important;
 }
 html[dir="ltr"] .nav-search-input {
+  direction: ltr !important;
+  text-align: left !important;
   padding-left: 14px !important;
   padding-right: 40px !important;
 }
@@ -1719,7 +1858,7 @@ html[dir="ltr"] .lang-switcher {
 </section>
   </main>
   
-  <footer class="site-footer" dir="rtl">
+  <footer class="site-footer" dir="rtl" style="direction: rtl;">
   <div class="footer-main">
     <div class="footer-container">
       <div class="footer-grid">
@@ -1727,13 +1866,13 @@ html[dir="ltr"] .lang-switcher {
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-col--brand">
           <div class="footer-logo-wrap">
-            <img src="/assets/business-logo.webp" alt="Игаль Ройтман оценка недвижимости" class="logo">
+            <img src="/assets/business-logo.webp" alt="Игаль Ройтман оценка имущества" class="logo" data-element-type="image" data-element-id="img-1778832776813-s8leo32xl" data-zappy-footer-image="true">
           </div>
-          <p class="footer-tagline">Профессиональная и надежная оценка имущества — мы стоим рядом с вами против страховых компаний.</p>
+          <p class="footer-tagline">Профессиональная и надежная оценка имущества — мы стоим на вашей стороне против страховых компаний.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook" style="display:none !important;" data-i18n-aria-label="contact_aria_label_127"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram" style="display:none !important;" data-i18n-aria-label="contact_aria_label_128"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/972559139983" aria-label="WhatsApp" data-i18n-aria-label="contact_aria_label_129"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook" style="display:none !important;" data-i18n-aria-label="home_aria_label_96"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="display:none !important;" data-i18n-aria-label="home_aria_label_97"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/972559139983" aria-label="WhatsApp" data-i18n-aria-label="home_aria_label_98"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -1741,9 +1880,9 @@ html[dir="ltr"] .lang-switcher {
         <div class="footer-col">
           <h3 class="footer-heading">Быстрая навигация</h3>
           <ul class="footer-nav">
-            <li>Услуги</li>
-            <li>О нас</li>
-            <li>Связаться с нами</li>
+            <li><a href="/ru/services">Услуги</a></li>
+            <li><a href="/ru/about">О нас</a></li>
+            <li><a href="/ru/contact">Связаться с нами</a></li>
           </ul>
         </div>
 
@@ -1751,21 +1890,24 @@ html[dir="ltr"] .lang-switcher {
         <div class="footer-col">
           <h3 class="footer-heading">Связаться с нами</h3>
           <ul class="footer-contact">
-            <li>Igalro1974@gmail.com</li>
             <li>
-              <span class="contact-icon"><i class="fas fa-phone"></i></span>
+              <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1778832776813-0j4olydnx" data-icon-type="fontawesome"></i></span>
+              <span class="contact-text"><a href="mailto:Igalro1974@gmail.com">Igalro1974@gmail.com</a></span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1778832776813-qkgbpzhf1" data-icon-type="fontawesome"></i></span>
               <span class="contact-text"><a href="tel:055-9139983">055-9139983</a></span>
             </li>
-            <li>Дрор 54, Ришон ле-Цион, Израиль, 7529637, Israel</li>
+            <li><a href="/ru">Дрор 54, Ришон ле-Цион, Израиль, 7529637, Israel</a></li>
           </ul>
         </div>
 
         <!-- Column 4: About Snippet -->
         <div class="footer-col footer-col--about">
           <h3 class="footer-heading">Кто мы</h3>
-          <p class="footer-about-text">Игаль Ройтман Оценка Имущества специализируется на оценке ущерба имуществу, сопровождении страховых претензий и профессиональном представительстве владельцев недвижимости. С многолетним опытом в области мы гарантируем точное документирование и оптимальные результаты.</p>
-          <a href="/ru/contact" class="footer-cta">Назначить консультацию</a>
-        </div>
+          <p class="footer-about-text">Игаль Ройтман оценка имущества специализируется на оценке ущерба имущества, сопровождении страховых исков и профессиональном представительстве владельцев недвижимости. С многолетним опытом в области мы гарантируем точное документирование и оптимальные результаты.</p>
+          <p class="zappy-editable"><a href="/ru/contact" class="footer-cta">Записаться на консультацию</a>
+        </p></div>
 
       </div>
     </div>
@@ -1775,16 +1917,16 @@ html[dir="ltr"] .lang-switcher {
   <div class="footer-bottom">
     <div class="footer-container">
       <div class="footer-bottom-inner">
-        <p class="footer-copyright">© 2026 Игаль Ройтман Оценка Имущества. Все права защищены.</p>
+        <p class="footer-copyright">© 2026 Игаль Ройтман оценка имущества. Все права защищены.</p>
         <div class="footer-legal">
-          <a href="/ru/privacy">Политика конфиденциальности</a>
+          <p class="zappy-editable"><a href="/ru/privacy">Политика конфиденциальности</a>
           <span class="footer-legal-sep"></span>
           <a href="/ru/terms">Условия использования</a>
           <span class="footer-legal-sep"></span>
-          <a href="/ru/accessibility">Доступность</a>
-          <span class="footer-legal-sep"></span>
+          <a href="/ru/accessibility">Доступность</a></p><div class="zappy-inserted-element" id="zappy-element-1778833729414-1solqto7c" data-element-id="zappy-element-1778833729414-1solqto7c" data-element-type="image" data-zappy-newly-inserted="true" data-zappy-media-cell="true" style="display: flex; flex-direction: column; align-items: stretch; justify-content: stretch; height: 220px !important; margin: 0px !important; padding: 0px !important; flex: 0 1 auto; width: 100%; overflow: hidden !important;" data-zappy-original-height="220"><img src="/assets/image-1778833789473-yfuvrq.webp" alt="Image" style="width: 100%; height: 100% !important; border-radius: 8px; max-width: 100%; object-fit: cover !important; margin-top: 20px; margin-right: auto !important; margin-bottom: 20px; margin-left: auto !important; object-position: 50% 50%; display: block;" data-element-type="image" data-element-id="zappy-element-1778833729414-1solqto7c" id="zappy-element-1778833729414-1solqto7c"></div>
+          <p class="zappy-editable"><span class="footer-legal-sep"></span>
           <a href="https://zappy5.com" target="_blank" class="zappy-attribution">Создано с помощью Zappy</a>
-        </div>
+        </p></div>
       </div>
     </div>
   </div>
@@ -2025,6 +2167,7 @@ html[dir="ltr"] .lang-switcher {
       "home_p_39": "שמאות רכוש מקצועית ואמינה — אנחנו עומדים לצדכם מול חברות הביטוח.",
       "home_p_40": "יגאל רויטמן שמאות רכוש מתמחה בהערכת נזקי רכוש, ליווי תביעות ביטוח וייצוג מקצועי של בעלי הנכסים. עם ניסיון רב שנים בתחום, אנו מבטיחים תיעוד מדויק ותוצאות מיטביות.",
       "home_p_41": "© 2026 יגאל רויטמן שמאות רכוש. כל הזכויות שמורות.",
+      "new_p_139": "<a href=\"/privacy\">מדיניות פרטיות</a>\n          <span class=\"footer-legal-sep\"></span>\n          <a href=\"/terms\">תנאי שימוש</a>\n          <span class=\"footer-legal-sep\"></span>\n          <a href=\"/accessibility\" style>נגישות</a>",
       "about_h1_1": "יגאל רויטמן —\nשמאי רכוש מטעם המבוטח",
       "about_h2_2": "שמאי רכוש מטעם המבוטח — המומחה שעומד לצדכם",
       "about_h2_3": "כיצד עובד שמאי רכוש מקצועי — מהשטח ועד לפיצוי",
@@ -2066,9 +2209,9 @@ html[dir="ltr"] .lang-switcher {
       "home_h3_14": "ביקור בנכס — בדיקה מקצועית ותיעוד הנזקים",
       "home_h3_15": "חוות דעת שמאית — הערכה מקצועית ומסמך תביעה",
       "home_h3_16": "ליווי למול חברת הביטוח — עד לפיצוי הוגן",
-      "home_h3_17": "ניווט מהיר",
-      "home_h3_18": "יצירת קשר",
-      "home_h3_19": "מי אנחנו",
+      "home_h3_17": "<span class=\"footer-heading-line\"></span>ניווט מהיר",
+      "home_h3_18": "<span class=\"footer-heading-line\"></span>יצירת קשר",
+      "home_h3_19": "<span class=\"footer-heading-line\"></span>מי אנחנו",
       "home_li_69": "שירותים",
       "home_li_70": "אודות",
       "home_li_71": "צור קשר",
@@ -2121,10 +2264,10 @@ html[dir="ltr"] .lang-switcher {
       "home_alt_89": "יגאל רויטמן שמאות רכוש",
       "home_div_77": "שירות ליבה",
       "home_div_78": "בדיקה מקצועית בנכס",
-      "home_div_79": "רונית ב.\n            נזקי מים — רמת גן",
-      "home_div_80": "משה ק.\n            נזקי רטיבות ומזג אוויר — פתח תקווה",
-      "home_div_81": "דנה ש.\n                נזקי שריפה — תל אביב",
-      "home_div_82": "3×\n              גובה הפיצוי שהתקבל לעומת ההצעה המקורית של חברת הביטוח",
+      "home_div_79": "<span class=\"index-testimonials-author-name\">רונית ב.</span>\n            <span class=\"index-testimonials-author-detail\">נזקי מים — רמת גן</span>",
+      "home_div_80": "<span class=\"index-testimonials-author-name\">משה ק.</span>\n            <span class=\"index-testimonials-author-detail\">נזקי רטיבות ומזג אוויר — פתח תקווה</span>",
+      "home_div_81": "<span class=\"index-testimonials-author-name\">דנה ש.</span>\n                <span class=\"index-testimonials-author-detail\">נזקי שריפה — תל אביב</span>",
+      "home_div_82": "<span class=\"index-testimonials-stat-number\">3×</span>\n              <span class=\"index-testimonials-stat-label\">גובה הפיצוי שהתקבל לעומת ההצעה המקורית של חברת הביטוח</span>",
       "home_nav_83": "שירותים",
       "home_nav_84": "אודות",
       "home_nav_85": "צור קשר",
@@ -4015,6 +4158,7 @@ html[dir="ltr"] .lang-switcher {
       "home_p_39": "Professional and reliable property appraisal — we stand by your side against insurance companies.",
       "home_p_40": "Yigal Roytman Property Appraisal specializes in property damage assessment, insurance claim support and professional representation of property owners. With years of experience in the field, we guarantee accurate documentation and optimal results.",
       "home_p_41": "© 2026 Yigal Roytman Property Appraisal. All rights reserved.",
+      "new_p_139": "<a href=\"/privacy\">Privacy Policy</a>\n          <span class=\"footer-legal-sep\"></span>\n          <a href=\"/terms\">Terms of Use</a>\n          <span class=\"footer-legal-sep\"></span>\n          <a href=\"/accessibility\" style>Accessibility</a>",
       "about_h1_1": "Yigal Roytman —\nProperty Appraiser Representing the Insured",
       "about_h2_2": "Property Appraiser Representing the Insured — The Expert Standing by Your Side",
       "about_h2_3": "How a Professional Property Appraiser Works — From Field to Compensation",
@@ -5572,10 +5716,6 @@ html[dir="ltr"] .lang-switcher {
     var currentLang = zappyI18n.language;
     var currentInfo = languageInfo[currentLang] || { nativeName: currentLang, flagImg: '' };
     
-    var langSwitcher = document.querySelector('.lang-switcher');
-    var iconColor = langSwitcher ? langSwitcher.getAttribute('data-icon-color') : 'currentColor';
-    if (!iconColor) iconColor = 'currentColor';
-    
     var optionsHtml = availableLanguages
       .filter(function(lang) { return lang !== currentLang; })
       .map(function(lang) {
@@ -5589,25 +5729,13 @@ html[dir="ltr"] .lang-switcher {
     li.className = 'mobile-lang-menu';
     li.innerHTML =
       '<button class="mobile-lang-toggle" type="button">' +
-        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="' + iconColor + '" style="flex-shrink:0;"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421,6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"/></svg>' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12.039,.002s0,0,0,0c-.013,0-.026-.002-.039-.002-.005,0-.009,0-.014,0-.002,0-.003,0-.005,0C5.373,.011,0,5.39,0,12s5.383,12,12,12,12-5.383,12-12S18.638,.023,12.039,.002Zm9.747,6.998h-4.814c-1.067-2.669-2.712-4.781-3.731-5.925,3.734,.421,6.901,2.719,8.546,5.925Zm-4.786,5c0,1.407-.292,2.753-.731,4H7.731c-.439-1.247-.731-2.593-.731-4s.292-2.754,.73-4h8.539c.439,1.247,.731,2.593,.731,4Zm-1.122,5c-1.229,2.838-3.116,4.99-3.878,5.788-.762-.798-2.649-2.95-3.878-5.788h7.755ZM8.121,7c1.229-2.841,3.117-4.992,3.879-5.789,.762,.798,2.649,2.95,3.878,5.789h-7.757ZM10.757,1.075c-1.025,1.15-2.668,3.264-3.73,5.925H2.214C3.859,3.795,7.024,1.498,10.757,1.075ZM1.764,8H6.668c-.403,1.247-.668,2.589-.668,4s.265,2.752,.669,4H1.764c-.487-1.242-.764-2.588-.764-4s.277-2.758,.764-4Zm.45,9H7.029c1.067,2.669,2.712,4.781,3.731,5.925-3.734-.421,6.901-2.719-8.546-5.925Zm11.026,5.925c1.019-1.144,2.664-3.257,3.731-5.925h4.814c-1.645,3.206-4.812,5.504-8.546,5.925Zm8.996-6.925h-4.905c.404-1.248,.669-2.589,.669-4s-.265-2.752-.669-4h4.905c.487,1.242,.764,2.588,.764,4s-.277,2.758-.764,4Z"/></svg>' +
         '<span>' + currentInfo.nativeName + '</span>' +
         '<svg class="mobile-lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"></polyline></svg>' +
       '</button>' +
       '<div class="mobile-lang-options">' + optionsHtml + '</div>';
     
     navMenu.appendChild(li);
-    
-    // Match nav link color for visual consistency
-    var firstNavLink = navMenu.querySelector('li:not(.mobile-lang-menu) > a');
-    if (firstNavLink) {
-      var navLinkColor = window.getComputedStyle(firstNavLink).color;
-      if (navLinkColor && navLinkColor !== 'rgba(0, 0, 0, 0)') {
-        li.style.color = navLinkColor;
-        // Update globe SVG fill to match nav link color
-        var globeSvg = li.querySelector('.mobile-lang-toggle > svg:first-child');
-        if (globeSvg) globeSvg.setAttribute('fill', navLinkColor);
-      }
-    }
     
     console.log('[i18n] Mobile language submenu created in hamburger menu');
   }
